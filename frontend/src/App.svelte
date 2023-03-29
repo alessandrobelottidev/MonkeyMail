@@ -7,24 +7,28 @@
 	import Contacts from './lib/pages/Contacts.svelte';
 	import Groups from './lib/pages/Groups.svelte';
 
-    import { Router, Route } from "svelte-routing";
     import Sidebar from './lib/Sidebar.svelte';
 
-    export let url = "";
+    import { Router, Route } from 'yrv';
 </script>
 
-<Router url="{url}">
-    <div class="min-h-screen bg-gray-100 pl-20 pt-6">
-        <Sidebar />
-        <div class="content">
-            <Route path="/groups" component="{Groups}" />
-            <Route path="/forms" component="{Forms}" />
-            <Route path="/contacts" component="{Contacts}" />
-            <Route path="/emails" component="{Emails}" />
-            <Route path="/send-email" component="{SendEmail}" />
-            <Route path="/profile" component="{Profile}" />
-            <Route path="/dashboard" component="{Dashboard}" />
-            <Route path="/"><Dashboard /></Route>
-        </div>
-    </div>
+<Router>
+    <Route exact path="/">Landing page</Route>
+
+    <Router path="/dashboard" nofallback>
+        <Route>
+            <div class="min-h-screen bg-gray-100">
+                <Sidebar />
+                <div class="content pl-20 pt-8">
+                    <Route exact path="/" component={Dashboard} />
+                    <Route exact path="/profile" component={Profile} />
+                    <Route exact path="/send-email" component={SendEmail} />
+                    <Route exact path="/emails" component={Emails} />
+                    <Route exact path="/forms" component={Forms} />
+                    <Route exact path="/contacts" component={Contacts} />
+                    <Route exact path="/groups" component={Groups} />                
+                </div>
+            </div>
+        </Route>
+    </Router>
 </Router>
