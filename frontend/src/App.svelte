@@ -1,5 +1,9 @@
+<svelte:head>
+    <title>MonkeyMail</title> 
+</svelte:head>
+
 <script>
-	import Dashboard from './lib/pages/Dashboard.svelte';
+	import Overview from './lib/pages/Overview.svelte';
     import Profile from './lib/pages/Profile.svelte';
 	import SendEmail from './lib/pages/SendEmail.svelte';
 	import Emails from './lib/pages/Emails.svelte';
@@ -19,8 +23,9 @@
         <Route>
             <div class="min-h-screen bg-gray-100">
                 <Sidebar />
-                <div class="content pl-20 pt-8">
-                    <Route exact path="/" component={Dashboard} />
+                <div class="content pl-20 pt-6">
+                    <Route exact path="/" redirect="/dashboard/overview" />
+                    <Route exact path="/overview" component={Overview} />
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/send-email" component={SendEmail} />
                     <Route exact path="/emails" component={Emails} />
