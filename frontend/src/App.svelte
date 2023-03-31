@@ -3,6 +3,7 @@
 </svelte:head>
 
 <script>
+    import Landing from './lib/pages/Landing.svelte';
 	import Overview from './lib/pages/Overview.svelte';
     import Profile from './lib/pages/Profile.svelte';
 	import SendEmail from './lib/pages/SendEmail.svelte';
@@ -17,7 +18,9 @@
 </script>
 
 <Router>
-    <Route exact path="/">Landing page</Route>
+    <Route exact path="/">
+        <Landing />
+    </Route>
 
     <Router path="/dashboard" nofallback>
         <Route>
