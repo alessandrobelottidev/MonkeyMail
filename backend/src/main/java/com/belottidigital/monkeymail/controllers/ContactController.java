@@ -21,7 +21,7 @@ public class ContactController {
 
     @GetMapping("/contacts/{username}")
     List<Contact> getContacts(@PathVariable String username) {
-        return contactRepository.findByUserId(
+        return contactRepository.findByUser(
                 userRepository.findByUsername(username).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found."))
         ).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No contacts found."));
     }
