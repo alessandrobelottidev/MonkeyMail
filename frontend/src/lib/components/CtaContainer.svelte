@@ -1,4 +1,4 @@
-<div class="text-center text-white container p-16  bg-primary">
+<div class="text-center text-white p-16  bg-primary">
     <p class="flex flex-col items-center justify-center">  
         <span class="mr-4 pb-4 text-4xl text-center font-extrabold">Register for free!</span>    
             
