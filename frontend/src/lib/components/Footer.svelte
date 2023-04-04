@@ -1,4 +1,4 @@
-<footer class="text-center text-white" style="background-color: #32AFEC">
+<footer class="text-center text-white bg-primary" >
   <div class="container p-16">
     <div class="">
       <p class="flex flex-col items-center justify-center">
@@ -16,8 +16,7 @@
   </div>
 
   <div
-    class="p-2 text-center"
-    style="background-color: #FFFFFF">
+    class="p-2 text-center bg-white">
     <a class="text-black" href="https://google.com/"
       >© 2023 Copyright MonkeyMail</a
     >
