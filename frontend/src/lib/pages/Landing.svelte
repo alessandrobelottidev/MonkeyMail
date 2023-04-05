@@ -5,6 +5,7 @@
 <script>
 	import Hero from './../components/Hero.svelte';
     import Navbar from "../components/Navbar.svelte";
+    import Heading from "../components/Heading.svelte"
     import CtaContainer from "../components/CtaContainer.svelte";
     import Footer from "../components/Footer.svelte";
     import Features from '../components/Features.svelte';
@@ -13,5 +14,6 @@
 <Navbar />
 <Hero />
 <Features />
+<Heading />
 <CtaContainer />
 <Footer />
