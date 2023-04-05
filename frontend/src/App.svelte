@@ -12,6 +12,8 @@
 	import Contacts from './lib/pages/Contacts.svelte';
 	import Groups from './lib/pages/Groups.svelte';
 
+    import Login from './lib/pages/Login.svelte';
+
     import Sidebar from './lib/Sidebar.svelte';
 
     import { Router, Route } from 'yrv';
@@ -20,6 +22,10 @@
 <Router>
     <Route exact path="/">
         <Landing />
+    </Route>
+
+    <Route path="/login">
+        <Login />
     </Route>
 
     <Router path="/dashboard" nofallback>
