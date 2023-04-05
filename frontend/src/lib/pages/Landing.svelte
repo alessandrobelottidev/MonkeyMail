@@ -11,7 +11,9 @@
 </script>
 
 <Navbar />
-<Hero />
-<Features />
-<CtaContainer />
+<div class="pt-[56px]">
+    <Hero />
+    <Features />
+    <CtaContainer />
+</div>
 <Footer />
