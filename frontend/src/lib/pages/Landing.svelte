@@ -12,8 +12,10 @@
 </script>
 
 <Navbar />
-<Hero />
-<Features />
-<Heading />
-<CtaContainer />
+<main class="pt-[56px]">
+    <Hero />
+    <Features />
+    <Heading />
+    <CtaContainer />
+</main>
 <Footer />

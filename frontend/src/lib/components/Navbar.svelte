@@ -9,7 +9,7 @@
   }
 </script>
 
-<div>
+<div class="bg-white fixed top-0 left-0 w-full z-50">
   <div class="shadow-sm">
     <nav class="container px-6 py-2 mx-auto md:flex md:justify-between md:items-center">
       <div class="flex items-center justify-between">
@@ -29,9 +29,9 @@
 
       <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
       <div class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu ? 'flex': 'hidden'}">
-        <Link class="text-gray-800 hover:text-primary text-center" href="#">Home</Link>
+        <Link class="text-gray-800 hover:text-primary text-center" href="/">Home</Link>
         <Link class="text-gray-800 hover:text-primary text-center" href="#">Features</Link>
-        <Link class="text-gray-800 hover:text-primary text-center" href="#">Login</Link>
+        <Link class="text-gray-800 hover:text-primary text-center" href="/login">Login</Link>
         <Link class="text-white bg-primary font-bold hover:bg-primaryDarker px-6 py-2 text-center" href="#">Sign Up</Link>
       </div>
     </nav>
