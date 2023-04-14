@@ -3,7 +3,7 @@
     import featuresBg from '../../assets/features-bg.png';
 </script>
 
-<div class="flex flex-col bg-white container mx-auto py-16 px-6">
+<div class="flex flex-col bg-white container mx-auto py-16 max-sm:px-6">
     
     <h1 class="mb-8 text-center font-bold text-3xl">Features</h1>
 
