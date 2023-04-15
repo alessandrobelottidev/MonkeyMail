@@ -37,21 +37,37 @@
         <Register />
     </Route>
 
-    <Route condition={() => $loggedIn} redirect="/login" path="/dashboard">
-        <div class="min-h-screen bg-gray-100">
-            <Sidebar />
-            <div class="content pl-20 pt-6">
-                <Route path="/" redirect="/dashboard/overview" />
-                <Route path="/overview" component={Overview} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/send-email" component={SendEmail} />
-                <Route path="/emails" component={Emails} />
-                <Route path="/forms" component={Forms} />
-                <Route path="/contacts" component={Contacts} />
-                <Route path="/groups" component={Groups} />                
+    <Router>
+        <Route condition={() => $loggedIn} redirect="/login" path="/dashboard">
+            <div class="min-h-screen bg-gray-100">
+                <Sidebar />
+                <div class="content pl-20 pt-6">
+                    <Route path="/" exact redirect="/dashboard/overview" />
+                    <Route path="/overview">
+                        <Overview />
+                    </Route>
+                    <Route path="/profile">
+                        <Profile />
+                    </Route>
+                    <Route path="/send-email">
+                        <SendEmail />
+                    </Route>
+                    <Route path="/emails">
+                        <Emails />
+                    </Route>
+                    <Route path="/forms">
+                        <Forms />
+                    </Route>
+                    <Route path="/contacts">
+                        <Contacts />
+                    </Route>
+                    <Route path="/groups">
+                        <Groups />     
+                    </Route>           
+                </div>
             </div>
-        </div>
-    </Route>
+        </Route>
+    </Router>
 
     <Route fallback>
         TODO: create a 404 page
