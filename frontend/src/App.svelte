@@ -13,10 +13,15 @@
 	import Groups from './lib/pages/Groups.svelte';
 
     import Login from './lib/pages/Login.svelte';
+    import Register from './lib/pages/Register.svelte';
 
     import Sidebar from './lib/Sidebar.svelte';
 
+    import { loggedIn, accessToken, refreshToken } from './stores/auth';
+
     import { Router, Route } from 'yrv';
+
+    $: console.log($loggedIn, $accessToken, $refreshToken);
 </script>
 
 <Router>
@@ -24,25 +29,31 @@
         <Landing />
     </Route>
 
-    <Route path="/login">
+    <Route condition={() => !$loggedIn} redirect="/dashboard/overview" path="/login">
         <Login />
     </Route>
 
-    <Router path="/dashboard" nofallback>
-        <Route>
-            <div class="min-h-screen bg-gray-100">
-                <Sidebar />
-                <div class="content pl-20 pt-6">
-                    <Route exact path="/" redirect="/dashboard/overview" />
-                    <Route exact path="/overview" component={Overview} />
-                    <Route exact path="/profile" component={Profile} />
-                    <Route exact path="/send-email" component={SendEmail} />
-                    <Route exact path="/emails" component={Emails} />
-                    <Route exact path="/forms" component={Forms} />
-                    <Route exact path="/contacts" component={Contacts} />
-                    <Route exact path="/groups" component={Groups} />                
-                </div>
+    <Route condition={() => !$loggedIn} redirect="/dashboard/overview" path="/register">
+        <Register />
+    </Route>
+
+    <Route condition={() => $loggedIn} redirect="/login" path="/dashboard">
+        <div class="min-h-screen bg-gray-100">
+            <Sidebar />
+            <div class="content pl-20 pt-6">
+                <Route path="/" redirect="/dashboard/overview" />
+                <Route path="/overview" component={Overview} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/send-email" component={SendEmail} />
+                <Route path="/emails" component={Emails} />
+                <Route path="/forms" component={Forms} />
+                <Route path="/contacts" component={Contacts} />
+                <Route path="/groups" component={Groups} />                
             </div>
-        </Route>
-    </Router>
+        </div>
+    </Route>
+
+    <Route fallback>
+        TODO: create a 404 page
+    </Route>
 </Router>
