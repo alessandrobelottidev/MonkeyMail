@@ -1,4 +1,4 @@
-package com.belottidigital.monkeymail.config;
+package com.belottidigital.monkeymail.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

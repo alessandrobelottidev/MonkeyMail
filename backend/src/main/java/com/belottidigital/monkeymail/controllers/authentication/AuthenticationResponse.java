@@ -1,4 +1,4 @@
-package com.belottidigital.monkeymail.controllers;
+package com.belottidigital.monkeymail.controllers.authentication;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

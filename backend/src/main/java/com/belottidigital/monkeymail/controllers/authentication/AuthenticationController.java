@@ -1,5 +1,6 @@
-package com.belottidigital.monkeymail.controllers;
+package com.belottidigital.monkeymail.controllers.authentication;
 
+import com.belottidigital.monkeymail.services.AuthenticationService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

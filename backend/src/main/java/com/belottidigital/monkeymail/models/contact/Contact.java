@@ -1,5 +1,6 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.contact;
 
+import com.belottidigital.monkeymail.models.user.User;
 import jakarta.persistence.*;
 
 @Entity

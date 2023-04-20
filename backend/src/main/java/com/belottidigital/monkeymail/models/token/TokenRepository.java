@@ -1,4 +1,4 @@
-package com.belottidigital.monkeymail.token;
+package com.belottidigital.monkeymail.models.token;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

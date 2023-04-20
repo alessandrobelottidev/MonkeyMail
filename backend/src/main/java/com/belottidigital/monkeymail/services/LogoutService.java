@@ -1,6 +1,6 @@
-package com.belottidigital.monkeymail.config;
+package com.belottidigital.monkeymail.services;
 
-import com.belottidigital.monkeymail.token.TokenRepository;
+import com.belottidigital.monkeymail.models.token.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

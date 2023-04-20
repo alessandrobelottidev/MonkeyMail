@@ -1,4 +1,4 @@
-package com.belottidigital.monkeymail.controllers;
+package com.belottidigital.monkeymail.controllers.authentication;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
+public class RegisterRequest {
     private String username;
     private String password;
+    private String email;
+    private String firstname;
+    private String lastname;
 }

@@ -1,10 +1,12 @@
-package com.belottidigital.monkeymail.controllers;
+package com.belottidigital.monkeymail.services;
 
-import com.belottidigital.monkeymail.config.JwtService;
-import com.belottidigital.monkeymail.models.UserRepository;
-import com.belottidigital.monkeymail.token.Token;
-import com.belottidigital.monkeymail.token.TokenRepository;
-import com.belottidigital.monkeymail.token.TokenType;
+import com.belottidigital.monkeymail.controllers.authentication.AuthenticationResponse;
+import com.belottidigital.monkeymail.controllers.authentication.LoginRequest;
+import com.belottidigital.monkeymail.controllers.authentication.RegisterRequest;
+import com.belottidigital.monkeymail.models.user.UserRepository;
+import com.belottidigital.monkeymail.models.token.Token;
+import com.belottidigital.monkeymail.models.token.TokenRepository;
+import com.belottidigital.monkeymail.models.token.TokenType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,8 +18,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.belottidigital.monkeymail.models.User;
-import com.belottidigital.monkeymail.models.Role;
+import com.belottidigital.monkeymail.models.user.User;
+import com.belottidigital.monkeymail.models.user.Role;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;

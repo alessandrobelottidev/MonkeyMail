@@ -1,8 +1,7 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.emailTemplate;
 
+import com.belottidigital.monkeymail.models.user.User;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "email_templates")

@@ -1,5 +1,7 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.sentEmail;
 
+import com.belottidigital.monkeymail.models.emailTemplate.EmailTemplate;
+import com.belottidigital.monkeymail.models.group.Group;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

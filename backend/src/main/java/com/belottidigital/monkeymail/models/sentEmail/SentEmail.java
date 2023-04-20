@@ -1,6 +1,8 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.sentEmail;
 
 
+import com.belottidigital.monkeymail.models.emailTemplate.EmailTemplate;
+import com.belottidigital.monkeymail.models.group.Group;
 import jakarta.persistence.*;
 
 @Entity

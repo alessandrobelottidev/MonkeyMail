@@ -1,5 +1,6 @@
-package com.belottidigital.monkeymail.config;
+package com.belottidigital.monkeymail.config.filters;
 
+import com.belottidigital.monkeymail.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

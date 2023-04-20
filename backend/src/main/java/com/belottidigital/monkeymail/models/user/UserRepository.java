@@ -1,4 +1,4 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

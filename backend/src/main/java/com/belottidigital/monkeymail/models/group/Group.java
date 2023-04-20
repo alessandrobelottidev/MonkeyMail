@@ -1,5 +1,7 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.group;
 
+import com.belottidigital.monkeymail.models.contact.Contact;
+import com.belottidigital.monkeymail.models.user.User;
 import jakarta.persistence.*;
 
 import java.util.List;

@@ -1,8 +1,8 @@
 package com.belottidigital.monkeymail.controllers;
 
-import com.belottidigital.monkeymail.models.Contact;
-import com.belottidigital.monkeymail.models.ContactRepository;
-import com.belottidigital.monkeymail.models.UserRepository;
+import com.belottidigital.monkeymail.models.contact.Contact;
+import com.belottidigital.monkeymail.models.contact.ContactRepository;
+import com.belottidigital.monkeymail.models.user.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

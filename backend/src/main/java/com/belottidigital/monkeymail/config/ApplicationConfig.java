@@ -1,6 +1,6 @@
 package com.belottidigital.monkeymail.config;
 
-import com.belottidigital.monkeymail.models.UserRepository;
+import com.belottidigital.monkeymail.models.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

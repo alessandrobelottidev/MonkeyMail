@@ -1,6 +1,11 @@
 package com.belottidigital.monkeymail.controllers;
 
-import com.belottidigital.monkeymail.models.*;
+import com.belottidigital.monkeymail.models.emailTemplate.EmailTemplate;
+import com.belottidigital.monkeymail.models.emailTemplate.EmailTemplateRepository;
+import com.belottidigital.monkeymail.models.group.Group;
+import com.belottidigital.monkeymail.models.group.GroupRepository;
+import com.belottidigital.monkeymail.models.sentEmail.SentEmail;
+import com.belottidigital.monkeymail.models.sentEmail.SentEmailRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

@@ -1,6 +1,6 @@
-package com.belottidigital.monkeymail.token;
+package com.belottidigital.monkeymail.models.token;
 
-import com.belottidigital.monkeymail.models.User;
+import com.belottidigital.monkeymail.models.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

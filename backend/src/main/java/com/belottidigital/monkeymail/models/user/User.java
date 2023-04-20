@@ -1,4 +1,4 @@
-package com.belottidigital.monkeymail.models;
+package com.belottidigital.monkeymail.models.user;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
