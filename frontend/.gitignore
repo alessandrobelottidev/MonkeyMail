@@ -61,4 +61,4 @@ internal
 .svelte-kit
 
 package-lock.json
-yarn.lock
+*.lock

@@ -16,7 +16,7 @@
     }
 </script>
 
-<div class={"min-h-screen w-[3.30rem] overflow-hidden border-r bg-white fixed left-0 p-0 duration-300".concat(" ", (sidebar) ? 'hover:w-56' : '')}>
+<div class={"min-h-screen w-[3.30rem] z-40 overflow-hidden border-r bg-white fixed left-0 p-0 duration-300".concat(" ", (sidebar) ? 'hover:w-56' : '')}>
     <div class="flex h-screen flex-col justify-between pt-2 pb-2">
         <div>
             <div class="w-max p-1">

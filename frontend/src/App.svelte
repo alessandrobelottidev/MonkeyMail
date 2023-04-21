@@ -17,11 +17,12 @@
 
     import Sidebar from './lib/Sidebar.svelte';
 
-    import { loggedIn, accessToken, refreshToken } from './stores/auth';
+    import { loggedIn, accessToken, refreshToken, username } from './stores/auth';
 
     import { Router, Route } from 'yrv';
 
     $: console.log($loggedIn, $accessToken, $refreshToken);
+    $: console.log($username);
 </script>
 
 <Router>
@@ -39,9 +40,9 @@
 
     <Router>
         <Route condition={() => $loggedIn} redirect="/login" path="/dashboard">
-            <div class="min-h-screen bg-gray-100">
+            <div class="min-h-screen bg-gray-100 bg-sand">
                 <Sidebar />
-                <div class="content pl-20 pt-6">
+                <div class="content pl-20 pt-6 pr-6">
                     <Route path="/" exact redirect="/dashboard/overview" />
                     <Route path="/overview">
                         <Overview />

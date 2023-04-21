@@ -8,16 +8,16 @@
 
   import Navbar from "../components/Navbar.svelte";
 
-  import { accessToken, refreshToken } from "../../stores/auth";
+  import { accessToken, refreshToken, username } from "../../stores/auth";
 
-  let username;
+  let uname;
   let password;
 
   let error = '';
 
   const submitForm = async () => {
     const data = {
-      username,
+      username: uname,
       password,
     }
 
@@ -26,6 +26,7 @@
 				if (res.status === 200) {
 					accessToken.set(res.data.access_token);
 					refreshToken.set(res.data.refresh_token);
+          username.set(uname);
 					navigateTo("/dashboard/overview");
 				}
 			})
@@ -44,7 +45,7 @@
           
           <div class="mb-4">
             <label class="block font-bold mb-2" for="username">Username</label>
-            <input bind:value={username} class="border w-full py-2 px-3 text-gray-700 focus:outline-none" id="username" type="text" placeholder="Username" required>
+            <input bind:value={uname} class="border w-full py-2 px-3 text-gray-700 focus:outline-none" id="username" type="text" placeholder="Username" required>
           </div>
 
           <div class="mb-6">
