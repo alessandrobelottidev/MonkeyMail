@@ -1,7 +1,8 @@
-package com.belottidigital.monkeymail.controllers;
+package com.belottidigital.monkeymail.controllers.contact;
 
 import com.belottidigital.monkeymail.models.contact.Contact;
 import com.belottidigital.monkeymail.models.contact.ContactRepository;
+import com.belottidigital.monkeymail.models.user.User;
 import com.belottidigital.monkeymail.models.user.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,10 +21,10 @@ public class ContactController {
     }
 
     @GetMapping("/contacts/{username}")
-    List<Contact> getContacts(@PathVariable String username) {
-        return contactRepository.findByUser(
+    List<ContactDTO> getContacts(@PathVariable String username) {
+        return ContactDTO.fromContactList(contactRepository.findByUser(
                 userRepository.findByUsername(username).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found."))
-        ).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No contacts found."));
+        ).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No contacts found.")));
     }
 
     @GetMapping("/contacts/{username}/{contactId}")
@@ -32,8 +33,18 @@ public class ContactController {
     }
 
     @PostMapping("/contacts/{username}")
-    Contact newContact(@PathVariable String username, @RequestBody Contact newContact) {
-        return contactRepository.save(newContact);
+    Contact newContact(@PathVariable String username, @RequestBody ContactDTO newContact) {
+        if (userRepository.findByUsername(username).isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.");
+
+        System.out.println(newContact.getCustomFields());
+
+        // Convert custom fields to JSON
+
+        User user = userRepository.findByUsername(username).get();
+        Contact contact = new Contact(newContact.getName(), newContact.getEmail(), newContact.getPhone(), newContact.getCustomFields(), user);
+
+        return contactRepository.save(contact);
     }
 
     @PutMapping("/contacts/{username}/{contactId}")
