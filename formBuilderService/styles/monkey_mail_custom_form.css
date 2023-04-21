@@ -1,0 +1,9 @@
+h1, h2, h3, p { margin: 0px }
+.mm-form { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.mm-form-title { margin-bottom: 0.8rem; }
+.mm-form-group { margin-bottom: 1.2rem; }
+.mm-form-label { display: block; margin-bottom: 0.4rem; }
+.mm-form-label span { color: red; }
+.mm-form-control { margin-bottom: 0.4rem!important; }
+.mm-form-help-text { font-size: 0.8rem; }
+.mm-form-submit {}

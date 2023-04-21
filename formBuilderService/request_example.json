@@ -1,0 +1,41 @@
+{
+    "title": "Form title",
+    "fields": [
+        {
+            "name": "name",
+            "type": "text",
+            "placeholder": "Enter your name",
+            "required": true,
+            "value": "John Doe",
+            "label": "Name",
+            "description": "Enter your name"
+        },
+        {
+            "name": "email",
+            "type": "email",
+            "placeholder": "Enter your email",
+            "required": true,
+            "label": "Email",
+            "description": "Enter your email"
+        },
+        {
+            "name": "telephone",
+            "type": "tel",
+            "placeholder": "Enter your telephone",
+            "required": true,
+            "label": "Telephone",
+            "description": "Enter your telephone"
+        },
+        {
+            "name": "message",
+            "type": "textarea",
+            "placeholder": "Enter your message",
+            "required": true,
+            "label": "Message",
+            "description": "Enter your message"
+        }
+    ],
+    "submit": {
+        "value": "Submit form"
+    }
+}
