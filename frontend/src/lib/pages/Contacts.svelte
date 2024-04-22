@@ -17,7 +17,7 @@
         'name',
         'email',
         'phone',
-        'custom fields',
+        // 'custom fields',
     ]
     
     // Fetch contacts on mount and store them in the contacts store using axios
@@ -48,34 +48,35 @@
     let name = '';
     let email = '';
     let phone = '';
-    let custom_fields = '';
+    // let custom_fields = '';
 
     const addContact = async () => {
         let custom_fields_json = {};
 
         try {
-            custom_fields_json = JSON.parse(custom_fields);
+            // custom_fields_json = await JSON.parse(custom_fields);
+            // console.log(custom_fields_json);
+
+            const { data } = await axios.post(`http://localhost:8080/contacts/${$username}`, {
+                name,
+                email,
+                phone,
+                // custom_fields: custom_fields_json,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${$accessToken}`,
+                    'Access-Control-Allow-Origin': '*',
+                },
+            });
+
+            if (data.length === 0)
+                return; // TODO: handle error in UI
+
+            console.log('Contact added: ', data);
         } catch (error) {
             console.log('Error parsing custom fields JSON: ', error);
             // TODO: handle error in UI
         }
-
-        const { data } = await axios.post(`http://localhost:8080/contacts/${$username}`, {
-            name,
-            email,
-            phone,
-            custom_fields: custom_fields_json,
-        }, {
-            headers: {
-                Authorization: `Bearer ${$accessToken}`,
-                'Access-Control-Allow-Origin': '*',
-            },
-        });
-
-        if (data.length === 0)
-            return; // TODO: handle error in UI
-
-        console.log('Contact added: ', data);
     }
 </script>
 
@@ -100,15 +101,15 @@
             <Input bind:value={email} type="email" defaultClass="rounded-none w-full" name="email" placeholder="name@company.com" />
         </Label>
 
-        <Label class="mt-4">
+        <Label class="my-4">
             <p class="mb-1">Phone</p>
             <Input bind:value={phone} type="tel" defaultClass="rounded-none w-full" name="phone" placeholder="+39 1234567890" />
         </Label>
 
-        <Label class="my-4">
+        <!-- <Label class="my-4">
             <p class="mb-1">Custom fields (JSON format)</p>
             <Textarea bind:value={custom_fields} class="rounded-none w-full bg-gray-200" name="custom_fields" placeholder={'{ "fieldName" : "fieldValue", }'} />
-        </Label>
+        </Label> -->
 
         <Button type="submit" class="w-full" btnClass="bg-primary py-2 text-white hover:bg-primaryDarker duration-300 font-semibold">Add new contact</Button>
     </form>

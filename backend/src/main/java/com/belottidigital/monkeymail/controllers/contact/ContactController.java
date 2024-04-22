@@ -37,12 +37,19 @@ public class ContactController {
         if (userRepository.findByUsername(username).isEmpty())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.");
 
-        System.out.println(newContact.getCustomFields());
+        System.out.println("CONTACT BEING PASSED: " + newContact.toString());
 
         // Convert custom fields to JSON
+//        String customFieldsJson = null;
+//        try {
+//            customFieldsJson = objectMapper.writeValueAsString(null);
+//        } catch (JsonProcessingException e) {
+//            // Handle JSON serialization exception
+//            throw new RuntimeException("Error converting custom fields to JSON", e);
+//        }
 
         User user = userRepository.findByUsername(username).get();
-        Contact contact = new Contact(newContact.getName(), newContact.getEmail(), newContact.getPhone(), newContact.getCustomFields(), user);
+        Contact contact = new Contact(newContact.getName(), newContact.getEmail(), newContact.getPhone(), user);
 
         return contactRepository.save(contact);
     }
@@ -54,7 +61,7 @@ public class ContactController {
 
         return contactRepository.findById(contactId)
                 .map(contact -> {
-                    contact.setCustomFields((newContact.getCustomFields() != null) ? newContact.getCustomFields() : contact.getCustomFields());
+//                    contact.setCustomFields((newContact.getCustomFields() != null) ? newContact.getCustomFields() : contact.getCustomFields());
                     contact.setName((newContact.getName() != null) ? newContact.getName() : contact.getName());
                     contact.setEmail((newContact.getEmail() != null) ? newContact.getEmail() : contact.getEmail());
                     contact.setPhone((newContact.getPhone() != null) ? newContact.getPhone() : contact.getPhone());

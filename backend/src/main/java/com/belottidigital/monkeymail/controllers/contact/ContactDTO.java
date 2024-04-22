@@ -18,14 +18,14 @@ public class ContactDTO {
     private String name;
     private String email;
     private String phone;
-    private Object customFields;
+//    private Object customFields;
 
     public ContactDTO(Contact contact) {
         this.id = contact.getId();
         this.name = contact.getName();
         this.email = contact.getEmail();
         this.phone = contact.getPhone();
-        this.customFields = contact.getCustomFields();
+//        this.customFields = contact.getCustomFields();
     }
 
     public static List<ContactDTO> fromContactList(List<Contact> contacts) {
@@ -36,5 +36,15 @@ public class ContactDTO {
         });
 
         return contactDTOList;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

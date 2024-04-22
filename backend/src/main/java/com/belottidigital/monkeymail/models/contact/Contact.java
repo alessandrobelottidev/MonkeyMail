@@ -16,8 +16,8 @@ public class Contact {
 
     private String phone;
 
-    @Column(columnDefinition = "jsonb")
-    private Object customFields;
+//    @Column(columnDefinition = "jsonb")
+//    private String customFields;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -25,11 +25,12 @@ public class Contact {
 
     public Contact() {}
 
-    public Contact(String email, String name, String phone, Object customFields, User user) {
+    // TODO: Implement custom_fields
+    public Contact(String email, String name, String phone, User user) {
         this.email = email;
         this.name = name;
         this.phone = phone;
-        this.customFields = customFields;
+//        this.customFields = null;
         this.user = user;
     }
 
@@ -65,13 +66,13 @@ public class Contact {
         this.phone = phone;
     }
 
-    public Object getCustomFields() {
-        return customFields;
-    }
-
-    public void setCustomFields(Object customFields) {
-        this.customFields = customFields;
-    }
+//    public String getCustomFields() {
+//        return customFields;
+//    }
+//
+//    public void setCustomFields(String customFields) {
+//        this.customFields = customFields;
+//    }
 
     public User getUser() {
         return user;
